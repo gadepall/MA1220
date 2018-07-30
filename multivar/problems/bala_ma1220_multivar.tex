@@ -1,0 +1,577 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{iithtlc}
+\begin{document}
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\title{ 
+\logo{
+Problem Set: Multivariable Calculus
+}
+}
+\author{J.~Balasubramaniam$^{\dagger}$ %<-this  stops a space
+\thanks{$\dagger$ The author is with the Department of Mathematics, IIT Hyderabad
+502285 India e-mail: jbala@iith.ac.in. }
+}
+\maketitle
+
+
+\section{Limits and Partial Derivatives}
+
+\begin{enumerate}
+
+
+\item Find the domain and range of the following functions:
+
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+{\small
+\item $
+f(x,y)=e^x+e^y
+$
+
+\item $
+f(x,y)=\frac{x}{y}
+$
+
+\item $
+f(x,y)= \cos^{-1}(x-y)
+$
+
+\item $
+f(x,y)=\sqrt{\frac{(x-y)}{(x+y}}
+$
+
+\item $
+f(x,y)=\frac{y}{|x|}
+$
+
+\item $
+f(x,y)= \frac{x}{2y}+\frac{y}{2x}
+$
+
+\item $
+f(x,y)=\frac{1}{(x^2-y^2)^\frac{3}{2}}
+$
+
+\item $
+f(x,y,z)=\sqrt{-x^2-y^2-z^2}
+$
+
+\item $
+f(x,y,z)=\tan^{-1} \big(\frac{x+z}{y}\big)
+$
+
+\item $
+f(x,y,z)= \ln(1+x^2-y^2+z)
+$
+}
+\end{multicols}
+\end{enumerate}
+
+\item Verify the following limits using $\epsilon $ - $\delta $ definition:
+
+\begin{enumerate}[(i)]
+
+\item $
+\lim\limits_{(x,y) \to (1,2)} (3x+y)=5
+$
+
+\item $
+\lim\limits_{(x,y) \to (0,0)} \frac{2x^2y}{x^2+y^2}=0
+$
+
+\end{enumerate}
+
+\item Show that the following limits do not exist:
+
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+
+\item $
+\lim\limits_{(x,y) \to (0,0)} \frac{x+y}{x-y}
+$
+
+\item 
+$\lim\limits_{(x,y) \to (0,0)} \frac{xy^3}{x^4+y^4}
+$
+
+\item
+$\lim\limits_{(x,y) \to (1,1)} \frac{xy}{x^2+y^2}
+$
+
+\item
+$\lim\limits_{(x,y,z) \to (0,0,0)} \frac{xyz}{x^3+y^3+z^3} 
+$
+
+\end{multicols}
+\end{enumerate}
+
+\item Show that the following limits exist and calculate them:
+
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+
+\item
+$\lim\limits_{(x,y) \to (0,0)} \frac{3xy}{\sqrt{x^2+y^2}}
+$
+
+\item
+$\lim\limits_{(x,y) \to (0,0)} \frac{5x^2y^2}{x^4+y^2}
+$
+
+\item
+$\lim\limits_{(x,y) \to (0,0)} \frac{x^3+y^3}{x^2+y^2}
+$
+
+\item
+$\lim\limits_{(x,y,z) \to (0,0,0)} \frac{xyz}{x^2+y^2+z^2}
+$
+
+\end{multicols}
+\end{enumerate}
+
+\item Find the indicated values at the given points:
+
+\begin{enumerate}
+
+\item
+$ f(x,y)= \sin (x+y); \ f_x(\pi/6,\pi/3)$
+
+\item
+$ f(x,y)= \ln (x^2+y^4); \ f_y(3,1)$
+
+\item
+$ f(x,y)= e^{\sqrt{x^2+y}}; \ f_y(0,4)$
+
+\item
+$ f(x,y)=\frac{x^2-y^2}{x^2+y^2}; \ f_y(2,-3)$
+
+\item
+$ f(x,y,z)= \sin(2xy^4z); \ f_{xz}$
+
+\item
+$ f(x,y,z)= e^{xy} \sin z; \ f_{xy}$
+
+\item
+$ f(x,y,z)= \cos(x+2y+3z); \ f_{yz}$
+
+\item
+$ f(x,y)= \ln (3x-2y); \ f_{yxy}$
+
+\end{enumerate}
+\end{enumerate}
+%
+\section{Continuity, Differentiability and Approximations}
+\begin{enumerate}
+
+\item Find the maximum region over which the following functions are continuous:
+
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+{\small
+\item $
+f(x,y)=e^{xy+2}
+$
+
+\item 
+{\footnotesize
+$
+f(x,y)=
+\frac{x^3+4xy^6-7x^4}{x^3-y^3}
+$
+}
+\item $
+f(x,y)= \tan^{-1}(x-y)
+$
+
+\item $
+f(x,y)= \sqrt{x-y}
+$
+
+\item $
+f(x,y,z)=y \ln(xz)
+$
+
+\item 
+{\footnotesize
+$
+f(x,y,z)=\frac{1}{\sqrt{1-x^2-y^2-z^2}}
+$
+}
+}
+\end{multicols}
+\end{enumerate}
+
+
+\item Find a function $g(x)$ / a number $c$ such that the following functions are continuous:
+
+\begin{enumerate}[(a)]
+
+\item $
+ f(x,y)=\begin{cases}
+\frac{x^2-y^2}{x-y},& x \neq y \\
+g(x),& x = y
+\end{cases}
+$ .
+
+\item $
+f(x,y)=\begin{cases}
+\frac{3xy}{\sqrt{x^2+y^2}},& (x,y) \neq (0,0) \\
+c,& (x,y) = (0,0)
+\end{cases}
+$ .
+
+\item $
+f(x,y)=\begin{cases}
+\frac{xy}{|x|+|y|},& (x,y) \neq (0,0) \\
+c,& (x,y) = (0,0)
+\end{cases}
+$ .
+
+\end{enumerate}
+
+
+\item Show by definition that the following are differentiable:
+
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+
+\item $
+z=x^2+y^2
+$
+
+\item $
+z=x^2y^2
+$
+
+\item $
+z$ is any polynomial in $x,y
+$
+
+\end{multicols}
+\end{enumerate}
+
+\item Calculate the gradient $\nabla f$ of the following functions:
+ 
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+{\small
+\item $
+f(x,y)={(x+y)}^2
+$
+
+\item $
+f(x,y)=\frac{x-y}{x+y}
+$
+
+\item $
+f(x,y)=\sqrt{x^2+y^3}
+$
+
+\item $
+f(x,y)=\frac{e^{x^2} - e^{-y^2}}{3y}
+$
+
+\item 
+{\footnotesize
+$
+f(x,y,z)=x \sin y \ln z
+$
+}
+\item 
+{\footnotesize
+$
+f(x,y,z)=\frac{x-z}{\sqrt{1-y^2+x^2}}
+$
+}
+\item 
+$
+f(x,y,z)=x \cosh y- y \ln z
+$
+
+\item $
+f(x,y,z)=(y-z)e^{\sqrt{1-y^2+x^2}}
+$
+}
+\end{multicols}
+\end{enumerate}
+
+
+\item Let $f$ and $g$ be differentiable functions of two variables.
+
+\begin{enumerate}[(a)]
+
+\item Show that $ \nabla (f + g)$ = $ \nabla f + \nabla g$.
+\item Show that $fg$ is differentiable and that $ \nabla (fg)$ = $ f \nabla g + g \nabla f $.
+\item Show that $ \nabla (f) =  \bar{0}$ if and only if $f$ is a constant.
+\item Show that if $ \nabla f = \nabla g$ then there is a constant $c$ such that $f(x,y) = g(x,y) = c$.
+\item What is the most general function $f$ such that $ \nabla f(\bar{x}) = \bar{x}$ for every  $ \bar{x} \in \mathbb{R}^2$.
+
+\end{enumerate}
+
+\item Use the total differential to estimate the given numbers:
+
+\begin{enumerate}[(i)]
+\begin{multicols}{2}
+
+\item $
+\frac{3.01}{5.99}
+$
+
+\item $
+\sqrt{\frac{5.02-3.96}{5.02+3.96}}
+$
+
+\item $
+\sin \big(\frac{11 \pi}{24}\big) \cos \big(\frac{13 \pi}{36} \big)
+$
+
+\end{multicols}
+\end{enumerate}
+
+\item When 3 resistors $r_1,r_2,r_3$ are connected in parallel, the total resistance $R = \frac{1}{r_1}+\frac{1}{r_2}+\frac{1}{r_3}$. If $r_1 =6 \pm 0.1$,$r_2=8 \pm 0.03$ and $r_3=12 \pm 0.15$ ohms, estimate $R$ and find an approximate value for the maximum error in your estimate.
+
+\item How much wood is contained in the sides of a rectangular box with sides of inside measurements
+$1m$, $1.2m$ and $1.6m$, if the thickness of the wood making up the sides is $5cm$.
+
+\item The volume of 10 moles of an ideal gasa was calculated to be $500cm^3$ at a temperature of $ \ang{40} C$.If the maximum error in each measurement $n$, $V$ and $T$ is $\frac{1}{2} \% $, calculate the approximate pressure of the gas ( in $nt/cm^2$), and find the approximate error in your computation.
+
+%\end{enumerate}
+\end{enumerate}
+
+
+\section{Gradient and Its Applications}
+
+\begin{enumerate}
+
+\item Calculate the directional derivatives at the given point in the direction of  $\bar{v}$:
+
+\begin{enumerate}[(i)]
+
+\item $
+f(x,y)=xy$  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  at $ (2,3) ; \bar{v}=\bar{i}+3\bar{j}
+$
+
+\item $
+f(x,y)= \ln(x+3y)$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ at $ (2,4) ; \bar{v}=\bar{i}+\bar{j}
+$
+
+
+\item $
+f(x,y)= \tan^{-1} \big(\frac{y}{x}\big) $ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ at $ (2,2) ; \bar{v}=3\bar{i}-2\bar{j}
+$
+
+
+\item $
+f(x,y,z)= x^2y^3+z\sqrt{x}  $ \ \ \ \ \ \ \ \ \  at $ (1,-2,3) ; \bar{v}=5\bar{j}+\bar{k}
+$
+
+
+\item $
+f(x,y,z)= e^{-(x^2+y^2+z^2)} $ \ \ \ \ \ \ \ \ \ \ at $ (1,1,1) ; \bar{v}=\bar{i}+3\bar{j}-5\bar{k}
+$
+
+
+\item $
+f(x,y,z)= \frac{1}{\sqrt{x^2+y^2+z^2}} $ \ \ \ \ \ \ \ \ \ \ \ \ at $ (-1,2,3) ; \bar{v}=\bar{i}-\bar{j}+\bar{k}
+$
+
+
+\end{enumerate}
+
+\item The temperature distribution of a ball centered at the origin is given by $ T(x,y,z)=\frac{100}{x^2+y^2+z^2+1}$.
+
+\begin{enumerate}[(a)]
+
+\item Where is the ball hottest ?
+\item Find the direction of greatest decrease of heat at the point $(3,-1,2)$ .
+\item Find the direction of greatest increase in heat. Does this vector point toward the origin ?
+
+\end{enumerate}
+
+
+\item Determine the nature of the critical points of the given functions:
+
+\begin{enumerate}[(i)]
+
+
+\item $
+f(x,y)=7x^2-8xy+3y^2+1
+$
+
+\item $
+f(x,y)=x^2+y^3-3xy
+$
+
+\item $
+f(x,y)=x^3+3xy^2+3y^2-15x+2 
+$
+
+\item $
+f(x,y)=\frac{1}{y}-\frac{1}{x}-4x+y
+$
+
+\item $
+f(x,y)=xy+\frac{1}{y}+\frac{8}{x}
+$
+
+\item $
+f(x,y)=\frac{2}{y}+\frac{1}{x}+2x+y+1
+$
+
+
+\end{enumerate}
+
+\item Find $3$ numbers whose sum is $50$ such that the product $xy^2z^3$ is a maximum.
+
+\item What is the maximum volume of an open-top rectangular box that can be built from $\alpha$ square
+meters of wood ?
+
+\item Find the dimensions of the rectangular box of maximum volume that can be inscribed in the ellipsoid $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ whose faces are parallel to the coordinate planes.
+
+\item A company uses $2$ types of raw materials, I and II, for its product. If it uses $x$ units of I and $y$ units of II it can produce $U$ units of the finished item where $U(x,y)=8xy+32x+40y-4x^2-6y^2$.
+Each unit of I costs Rs. $10$ and each of unit of II costs Rs. $4$. Each unit of the product can be sold for Rs. $40$. How can the company maximize its profits?
+
+\item Solve the following using Lagrange multipliers:
+
+\begin{enumerate}[(a)]
+
+\item Minimum distance from the point $(3,0,1)$  to the plane $2x-y+4z=5$.
+
+\item Find the maximum and minimum values of $xyz$ if $(x,y,z)$ is on the ellipsoid $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$.
+
+\item Maximize the function $x^3+y^3+z^3$ for $(x,y,z)$ on the planes $x+y+z=2$ and $x+y-z=3$.
+
+\item Show that among all triangles having the same perimeter, the equilateral triangle has the
+greatest area.
+
+\item The plane $x+y+z=1$ cuts the cylinder $x^2+y^2=1$ in an ellipse. Find the points on the ellipse that are closest and farthest from the origin.
+
+\end{enumerate}
+
+\item Find $\frac{\partial z}{\partial x} $ and $\frac{\partial z}{\partial y}$ at the indicated points:
+
+\begin{enumerate}[(i)]
+
+\item $z^3-xy+yz+y^3-2=0 $ at $(1,1,1)$
+
+\item $\frac{1}{x}+\frac{1}{y}+\frac{1}{z}-1=0 $  at $(2,3,6)$
+
+\item $ xe^y+ye^z+2 \ln x-2-3 \ln 2=0 $  at $(1, \ln 2, \ln 3)$.
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+\section{Exercises}
+
+\begin{enumerate}
+\item Give examples of the following, with a brief justification. 
+
+\begin{enumerate}[(a)]
+ 
+\item A function $f(x,y)$ and a point $(x_0,y_0)$ such that $(x_0,y_0)$ is a saddle point.
+\item A function $f(x,y)$ such that $\Delta f = 9x^2y^2 \hat{i}+6 x^3y \hat{j}.$
+\item A function $f(x,y)$ such that at the point $(3,1)$ the direction of steepest increase of $f$ is along the vector $\bar{u}=\hat{i}+6\hat{j}$.
+
+\end{enumerate}
+
+ 
+\item Use total differential to estimate $(1.95)^4 (3.04)^3 (0.97)^5$.
+
+
+\item Show by definition that $f(x,y) = xy^2$ is differentiable. 
+
+\item Determine the nature of the critical points of $ f(x,y) = 9x^2+4y^2-12xy+7 $.
+
+\item A firm has Rs. $250,000$ to spend on labour and raw materials. The output of the firm is $\alpha xy$
+where $\alpha$ is a constant and $x$,$y$ are the quantity of labour and raw materials consumed. If the unit price of hiring labour is Rs. $5000$ and the unit price of raw materials is $2500$, find the ratio of $x$ to $y$ that maximizes output.
+
+\item Find the point at which $w = xyz$ attains its maximum w.r.to the constraints $x + y + z = 30$ and
+$x + y = z$.
+
+\item Show that every line normal to the surface of a sphere passes through its center.
+
+\item Give examples of functions with the following properties: 
+
+\begin{enumerate}[(a)]
+ 
+\item A function $f(x,y)$ whose domain is $\lbrace (x, y) \in \mathbb{R}^2 | x \neq 0 \rbrace$ and whose range is $(\frac{-\pi}{2},\frac{\pi}{2})$.
+
+
+\item A function $f(x,y)$ such that $\frac{df}{dx}$ exists at $(0,0)$ but $f$ is not continuous at $(0,0)$.
+
+\item  A function $f(x,y)$ such that $f_{xy}(0,0) \neq f_{yx}(0,0)$.
+
+\item A function $f(x,y)$ such that $f(0,0)$ is defined but $\nabla f(0,0)$ is not.
+
+
+\end{enumerate}
+
+\item Find the domain, range and level curves of $f(x,y) = \frac{x^2-y^2}{x^2+y^2}$.
+
+
+\item Show that $\lim\limits_{(x,y) \to (0,0)} \frac{y^2-2x}{y^2+2x}$ does not exist.
+
+\item Find the unit vector along which $4x^2+9y^2$ increases most rapidly at the point $(2,1)$.
+
+\item Find a number such that the following function is continuous at the origin:
+
+$ 
+f_(x,y)=\begin{cases}
+\frac{-2xy}{\sqrt{x^2+y^2}},& (x,y) \neq (0,0) \\
+c,& (x,y) = (0,0)
+\end{cases}
+$ .
+
+
+\item Examine the function $y = 2 \sin x + \cos 2x$ for maxima and minima.
+
+\item Let $z = f(x,y)$ with $x = r \cos \theta$ and $y = r \sin \theta$. Also writing $z = g(r,\theta) = f(r \cos \theta, r \sin \theta)$, show that
+
+$\Big(\frac{\delta g}{\delta r}\Big)^2 + \frac{1}{r^2} \Big(\frac{\delta g}{\delta \theta}\Big)^2 = \Big(\frac{\delta f}{\delta x}\Big)^2 + \Big(\frac{\delta f}{\delta y}\Big)^2$.
+
+\item Determine the nature of the critical points of $f(x,y) = 2x^3-24xy+16y^3$.
+
+\item How much wood is contained in the sides of a rectangular box with sides of inside measurements
+$1.5m, 1.3m \ and \ 2m$, if the thickness of the wood making up the sides is $3cm$?
+
+\item A silo is in the shape of a cylinder topped with a cone (much like a circus tent). If the radius of
+each is $6m$, and the total surface area is $200 m^2$ (excluding the base), what are the heights of the
+cylinder and the cone that maximize the volume enclosed by the silo?
+
+
+\end{enumerate}
+\end{document}
+

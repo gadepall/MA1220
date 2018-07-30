@@ -1,0 +1,6 @@
+ELEMENTS OF BASIC CALCULUS-II
+Integral Calculus: Definite Integrals as a limit of sums, Applications of integration to area, volume,
+surface area, Improper integrals. Functions of several variables: Continuity and differentiability,
+mixed partial derivatives, local maxima and minima for function of two variables, Lagrange
+multipliers. Functional Series: Pointwise and uniform convergence, basic aspects of Power series,
+Fourier series.
